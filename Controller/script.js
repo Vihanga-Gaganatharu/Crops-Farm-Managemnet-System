@@ -1,59 +1,30 @@
-const hamBurger = document.querySelector(".toggle-btn");
+$(document).ready(function () {
+  $("#signup-form").hide();
 
-hamBurger.addEventListener("click", function () {
-  document.querySelector("#sidebar").classList.toggle("expand");
+  $("#login-form a").click(function (e) {
+    e.preventDefault();
+    $("#login-form").fadeOut(300, function () {
+      $("#signup-form").fadeIn(300);
+    });
+  });
+
+  $("#signup-form a").click(function (e) {
+    e.preventDefault();
+    $("#signup-form").fadeOut(300, function () {
+      $("#login-form").fadeIn(300);
+    });
+  });
+
+  $(".togglePassword").on("click", function () {
+    const passwordField = $(".password");
+    const eyeIcon = $(".eyeIcon");
+
+    if (passwordField.attr("type") === "password") {
+      passwordField.attr("type", "text");
+      eyeIcon.removeClass("bi-eye-slash").addClass("bi-eye"); 
+    } else {
+      passwordField.attr("type", "password");
+      eyeIcon.removeClass("bi-eye").addClass("bi-eye-slash");
+    }
+  });
 });
-
-function loadPage(page) {
-  const frame = document.getElementById("main-frame");
-  frame.src = `./page/${page}.html`;
-  document
-    .querySelectorAll(".sidebar-link")
-    .forEach((nav) => nav.classList.remove("active"));
-  const activeLink = document.getElementById(`${page}-btn`);
-  if (activeLink) {
-    activeLink.classList.add("active");
-  }
-}
-
-document
-  .getElementById("dashboard-btn")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    loadPage("homePage");
-  });
-
-document
-  .getElementById("field-data-btn")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    loadPage("fieldForm");
-  });
-
-document
-  .getElementById("equipment-btn")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    loadPage("equipmentForm");
-  });
-
-document
-  .getElementById("vehicle-btn")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    loadPage("vehicleForm");
-  });
-
-document
-  .getElementById("staff-btn")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    loadPage("staffForm");
-  });
-
-document
-  .getElementById("crops-btn")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    loadPage("cropsForm");
-  });

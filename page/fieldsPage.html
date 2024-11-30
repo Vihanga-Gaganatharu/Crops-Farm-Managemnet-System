@@ -39,10 +39,10 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="addFieldForm">
+                    <div id="addFieldForm">
                         <div class="mb-3">
                             <label for="fieldName" class="form-label">Field Name</label>
-                            <input type="text" class="form-control" id="fieldName" placeholder="Enter field name"
+                            <input type="text" class="form-control text-capitalize" id="fieldName" placeholder="Enter field name"
                                 required>
                         </div>
                         <div class="mb-3">
@@ -51,29 +51,17 @@
                                 placeholder="Enter GPS coordinates" required>
                         </div>
                         <div class="mb-3">
-                            <label for="cropType" class="form-label">Crop Type</label>
-                            <select class="form-select" id="cropType" required>
-                                <option selected disabled>Select crop type</option>
-                                <option value="Rice">Rice</option>
-                                <option value="Green gram">Green gram</option>
-                                <option value="Chickpea">Chickpea</option>
-                                <option value=" Sweet potato">Sweet potato</option>
-                                <option value="Reddish">Reddish</option>
-                                <option value="Cassava">Cassava</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
                             <label for="fieldSize" class="form-label">Field Size (in sq. meters)</label>
                             <input type="number" class="form-control" id="fieldSize" placeholder="Enter field size"
                                 required>
                         </div>
                         <div class="mb-3">
-                            <label for="staffMem" class="form-label">Staff Member</label>
-                            <select class="form-select" id="staffmem" required>
-                                <option selected disabled>Select allocated staff member</option>
-                                <option value="">S001</option>
-                                <option value="">S002</option>
-                            </select>
+                            <label for="staffId" class="form-label">Staff Members</label>
+                            <select class="form-select staffId" id="staffId" required></select>
+                        </div>
+                        <div class="mt-3">
+                            <h6>Selected Fields:</h6>
+                            <ul id="selectedFieldsList"></ul>
                         </div>
                         <div class="mb-3">
                             <label for="fieldImg1" class="form-label">Field Image 1</label>
@@ -83,11 +71,11 @@
                             <label for="fieldImg2" class="form-label">Field Image 2</label>
                             <input type="file" class="form-control" id="fieldImg2" required>
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" form="addFieldForm" class="btn btn-success">Add New Field</button>
+                    <button type="submit" form="addFieldForm" class="btn btn-success" id="btnSave">Add New Field</button>
                 </div>
             </div>
         </div>
@@ -102,13 +90,8 @@
                         id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                         Search Field By Id
                     </button>
-                    <ul class="dropdown-menu w-25" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#" data-value="F001">F001</a></li>
-                        <li><a class="dropdown-item" href="#" data-value="F002">F002</a></li>
-                        <li><a class="dropdown-item" href="#" data-value="F003">F003</a></li>
-                        <li><a class="dropdown-item" href="#" data-value="F004">F004</a></li>
-                    </ul>
-                    <button class="btn btn-success" type="button" id="btn-search">
+                    <ul class="dropdown-menu w-25" id="fieldList" aria-labelledby="dropdownMenuButton"> </ul>
+                    <button class="btn btn-success" type="button" id="btnSearch">
                         <i class="bi bi-search"></i>
                     </button>
                 </div>
@@ -124,7 +107,6 @@
                     <th>Field Id</th>
                     <th>Field Name</th>
                     <th>Location (GPS)</th>
-                    <th>Crop Type</th>
                     <th>Size (sq. meters)</th>
                     <th>Staff Member</th>
                     <th>Field Image 1</th>
@@ -132,31 +114,7 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>F001</td>
-                    <td>Field 1</td>
-                    <td>37.7749° N, 122.4194° W</td>
-                    <td>Rice</td>
-                    <td>500</td>
-                    <td>S001</td>
-                    <td><img src="path/to/image1.jpg" alt="Field Image 1" class="img-thumbnail"
-                            style="max-width: 100px;">
-                    </td>
-                    <td><img src="path/to/image2.jpg" alt="Field Image 2" class="img-thumbnail"
-                            style="max-width: 100px;">
-                    </td>
-                    <td>
-                        <button id="btn-edit-field" class="btn btn-outline-primary btn-sm mb-1" data-bs-toggle="modal"
-                            data-bs-target="#editFieldModal">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <button id="btn-delete-field" class="btn btn-outline-danger btn-sm mb-1">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
+            <tbody class="text-capitalize" id="fieldTable"></tbody>
         </table>
     </div>
 
@@ -170,7 +128,7 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="editFieldForm">
+                    <div id="editFieldForm">
                         <div class="mb-3">
                             <label for="editFieldId" class="form-label">Field Id</label>
                             <input type="text" class="form-control" id="editFieldId" readonly>
@@ -186,29 +144,17 @@
                                 placeholder="Enter GPS coordinates" required>
                         </div>
                         <div class="mb-3">
-                            <label for="editCropType" class="form-label">Crop Type</label>
-                            <select class="form-select" id="editCropType" required>
-                                <option selected disabled>Select crop type</option>
-                                <option value="Rice">Rice</option>
-                                <option value="Green gram">Green gram</option>
-                                <option value="Chickpea">Chickpea</option>
-                                <option value=" Sweet potato">Sweet potato</option>
-                                <option value="Reddish">Reddish</option>
-                                <option value="Cassava">Cassava</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
                             <label for="editFieldSize" class="form-label">Field Size (in sq. meters)</label>
                             <input type="number" class="form-control" id="editFieldSize" placeholder="Enter field size"
                                 required>
                         </div>
                         <div class="mb-3">
-                            <label for="editStaffMem" class="form-label">Staff Member</label>
-                            <select class="form-select" id="editStaff" required>
-                                <option selected disabled>Select allocated staff member</option>
-                                <option value="S001">S001</option>
-                                <option value="S002">S002</option>
-                            </select>
+                            <label for="editStaffId" class="form-label">Staff Member</label>
+                            <select class="form-select staffId" id="editStaffId" required></select>
+                        </div>
+                        <div class="mt-3">
+                            <h6>Selected Fields:</h6>
+                            <ul id="updatedFieldsList"></ul>
                         </div>
                         <div class="mb-3">
                             <label for="editFieldImg1" class="form-label">Field Image 1</label>
@@ -218,17 +164,17 @@
                             <label for="editFieldImg2" class="form-label">Field Image 2</label>
                             <input type="file" class="form-control" id="editFieldImg2" required>
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" form="editFieldForm" class="btn btn-success">Save Changes</button>
+                    <button type="submit" form="editFieldForm" class="btn btn-success" id="btnEdit">Save Changes</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="../controller/fieldsController.js"></script>
+    <script type="module" src="../controller/fieldsController.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>

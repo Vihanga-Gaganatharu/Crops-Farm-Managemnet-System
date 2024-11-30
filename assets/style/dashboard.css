@@ -35,3 +35,14 @@ h3 {
         height: 95vh;
     }
 }
+
+.custom-button {
+    border-radius: 10px; /* Adjust the radius as needed */
+    background-color: #28a745; /* Original success color */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+}
+
+.custom-button:hover {
+    background-color: #218838; /* Change to a darker green on hover */
+    border-color: #e9ecef; /* Optional: light border color on hover */
+}

@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+ 
+.side-bar{
+    margin-top: 20%;
+}
+
+#login-form span {
+    cursor: pointer;
+}
+
+#signup-form span {
+    cursor: pointer;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #a6f5a6;
+}
+
+.col-lg-4 {
+    border-radius: 0px 60px 60px 0px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    color: #abf8a9;
+}
+
+.side-bar h1, .side-bar h3 {
+    font-weight: bold;
+}
+
+.side-bar img {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.side-bar p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.content {
+    padding: 20px;
+}
+
+h1.fw-bold {
+    color: #28a745;
+    font-size: 28px;
+}
+
+form .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 10px 15px;
+    transition: border-color 0.3s ease;
+}
+
+form .form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
+}
+
+.togglePassword {
+    cursor: pointer;
+    color: #6c757d;
+}
+
+.togglePassword:hover {
+    color: #28a745;
+}
+
+.btn-success {
+    background-color: #83ffa0;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #ffffff;
+    transform: scale(1.01);
+}
+
+a.text-decoration-none {
+    color: #28a745;
+    transition: color 0.3s ease;
+}
+
+a.text-decoration-none:hover {
+    color: #83fc9f;
+    text-decoration: underline;
+}
+
+img.mb-3 {
+    width: 50px;
+}
+
+small {
+    color: #6c757d;
+}
+
+.centerForm {
+    margin: 10%;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(141, 233, 182, 0.562);
+    background: linear-gradient(135deg, #deffe2, #ffffff);
+    color: #fff;
+    max-width: 1000px;
+    border-bottom: #a6f5a6;
+}
+
+

@@ -12,13 +12,13 @@ body {
     height: 90vh;
 }
 
-.container-fluid{
+.container-fluid {
     background-color: #ffffff;
 }
+
 .offcanvas {
     background-color: #ffffff; /* Replace with your desired color */
 }
-
 
 .dash-btn a:hover {
     background-color: #4caf50;
@@ -33,7 +33,6 @@ body {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
-
 
 /* Responsive Adjustments */
 @media (max-width: 767px) {

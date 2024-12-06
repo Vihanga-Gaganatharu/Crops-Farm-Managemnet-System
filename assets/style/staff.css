@@ -24,6 +24,57 @@
 .modal-title {
     font-size: 1.25rem;
 }
+.modal-body {
+    font-size: 1.25rem;
+    color: #00ff55;
+}
+/* General styles for the modal input fields */
+.modal .form-control {
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect for the input fields */
+.modal .form-control:focus {
+    border-color: #05f02c; /* Change to your desired color */
+    box-shadow: 0 0 5px rgba(116, 240, 122, 0.5); /* Add a subtle shadow */
+}
+
+/* Style for the select dropdown */
+.modal .form-select {
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect for the select dropdown */
+.modal .form-select:focus {
+    border-color: #05f02c; /* Change to your desired color */
+    box-shadow: 0 0 5px rgba(116, 240, 122, 0.5); /* Add a subtle shadow */
+}
+
+/* File input styles */
+.modal .form-control[type="file"] {
+    padding: 6px;
+    font-size: 1rem;
+}
+
+/* Add custom styling for labels */
+.modal .form-label {
+    font-weight: bold;
+    color: #00ff0d;
+}
+
+/* Add some spacing between the fields */
+.modal .mb-3 {
+    margin-bottom: 1.5rem;
+}
+
 
 .btn-close {
     background-color: white;

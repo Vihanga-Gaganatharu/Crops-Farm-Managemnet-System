@@ -27,6 +27,15 @@
     color: #5bf87a;
 }
 
+.container-fluid{
+    color: #00ff55;
+
+}
+.container-fluid .form-select{
+    border-radius: 60px;
+    border: 1px solid #242424;
+    color: #05f02c;
+}
 .modal-header {
     background-color: #c9ffd4;
     color: white;
@@ -99,13 +108,23 @@
     overflow-x: auto;
 }
 
+.table {
+    border-radius: 60px;
+    border: 1px solid #ffffff;
+    color: #5bf87a;
+}
 .table thead {
-    background-color: #198754;
+    background-color: #00ff33;
     color: #ffffff;
+    border-radius: 60px;
+    border: 1px solid #ffffff;
+    color: #5bf87a;
 }
 
 .table th,
 .table td {
     vertical-align: middle;
     text-align: center;
+    border-radius: 60px;
+    border: 1px solid #ffffff;
 }

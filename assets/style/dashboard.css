@@ -12,6 +12,12 @@ body {
     height: 90vh;
 }
 
+.container-fluid{
+    background-color: #ffffff;
+}
+.offcanvas {
+    background-color: #ffffff; /* Replace with your desired color */
+}
 
 
 .dash-btn a:hover {

@@ -50,7 +50,7 @@ $(document).ready(function () {
       .then((response) => {
         if (response && response.token) {
           localStorage.setItem("authToken", response.token);
-          window.location.href = "../pages/dashboard.html";
+          window.location.href = "../page/dashboard.html";
         }
       })
       .catch((error) => {

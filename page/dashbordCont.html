@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashbordCont</title>
+    <link rel="stylesheet" href="../assets/style/dashbordCont.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="container py-4">
+        <div class="dashboard-header">
+            <h1>Dashboard Overview</h1>
+            <p>Welcome To Green Shadow Farm Management System. Here’s what’s happening today.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- First Row of Cards -->
+            <div class="col-md-4">
+                <div style="border: 1px solid #008807;"  class="card text-center">
+                    <div class="card-body">
+                        <i class="card-icon bi bi-bar-chart-fill"></i>
+                        <h5 style="color: #00fc0d;" class="card-title mt-3">Total Field</h5>
+                        <p class="card-text">$12,345</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="border: 1px solid #008807;"  class="card text-center">
+                    <div class="card-body">
+                        <i  class="card-icon bi bi-people-fill"></i>
+                        <h5 style="color: #00fc0d;" class="card-title mt-3">Active Staff</h5>
+                        <p class="card-text">1,234</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="border: 1px solid #008807;"  class="card text-center">
+                    <div class="card-body">
+                        <i class="card-icon bi bi-car-front-fill"></i>
+                        <h5 style="color: #00fc0d;" class="card-title mt-3">Availbel Vehical</h5>
+                        <p class="card-text">67</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+            <!-- Second Row of Cards -->
+            <div class="col-md-6">
+                <div style="border: 1px solid #008807;" class="card">
+                    <div class="card-body">
+                        <h5 style="color: #00fc0d;" class="card-title">Performance Overview</h5>
+                        <p class="card-text">Track your key performance metrics and ensure your operations are on track.</p>
+                        <a href="../page/report.html" style="background-color: #ffffff; border: 2px solid #008807; color: #000000;  border-radius: 60px;  padding: 10px 20px; font-size: 16px; text-decoration: none; transition: all 0.3s ease-in-out;" class="btn btn-success" onmouseover="this.style.backgroundColor='#008807'; this.style.color='#ffffff';" onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#000000';" onclick="this.style.backgroundColor='#004d1a'; this.style.color='#ffffff';">View Report</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div style="border: 1px solid #008807;"  class="card">
+                    <div class="card-body">
+                        <h5 style="color: #00fc0d;" class="card-title">Upcoming Tasks</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">Check crop health</li>
+                            <li class="list-group-item">Update staff schedules</li>
+                            <li class="list-group-item">Generate monthly reports</li>
+                        </ul>
+                        <a href="#" style="background-color: #ffffff; border: 2px solid #008807; border-radius: 60px; padding: 10px 20px; font-size: 16px; text-decoration: none; transition: all 0.3s ease-in-out;" class="btn mt-3" onmouseover="this.style.backgroundColor='#008807'; this.style.color='#ffffff';" onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#000000';" onclick="this.style.backgroundColor='#004d1a'; this.style.color='#ffffff';">Manage Tasks</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-p0QXQNG+Fr8rrQF1qcNf05N2a5W5aOhpPTjURH8fVSw8N9kxYBOf9FNog0k2pg0G" 
+    crossorigin="anonymous"></script>
+    
+</body>
+</html>

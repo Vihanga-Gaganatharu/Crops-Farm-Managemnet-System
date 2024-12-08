@@ -80,7 +80,7 @@ $(document).ready(function () {
         if (response && response.token) {
           swal("Confirmation!", "User Registration Successfully!", "success");
           localStorage.setItem("authToken", response.token);
-          window.location.href = "../pages/dashboard.html";
+          window.location.href = "../page/dashboard.html";
         }
       })
       .catch((error) => {

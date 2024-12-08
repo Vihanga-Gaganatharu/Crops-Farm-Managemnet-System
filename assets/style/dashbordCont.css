@@ -35,23 +35,35 @@ body {
 /* Card Styles */
 .card {
     transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #7dff55;
+    background-color: #ffffff;
 }
 
 .card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+    box-shadow: 0 6px 15px rgba(1, 255, 22, 0.377);
+    border: 1px solid #7dff55;
 }
 
 .dashboard-header {
     text-align: center;
-    margin-bottom: 30px;
-    color: #006134;
+    margin-bottom: 0px;
+    color: #505050;
 }
 
 .card-icon {
     font-size: 3rem;
-    color: #4caf50;
+    color: #a5fab7;
 }
+
+.btn{
+    border: 2px solid #ffffff;
+    border-radius: 60px;
+}
+.btn:hover {
+    border: 1px solid #ffffff;
+    border-radius: 60px;
+}   
 
 .card-title {
     font-size: 1.5rem;
